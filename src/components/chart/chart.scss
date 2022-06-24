@@ -1,0 +1,78 @@
+.chart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    -webkit-box-shadow: 1px 0px 8px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 0px 8px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 0px 8px 1px rgba(50, 50, 50, 0.618);
+    // border: 1px solid var(--border-100);
+    border-radius: 5px;
+    background-color: var(--background-hover);
+
+    .titleSection {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+
+        .chartTitle {
+
+            h2 {
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
+
+            p {
+                display: flex;
+                align-items: center;
+                color: var(--gray-100);
+                font-size: 13px;
+
+                .icon {
+                    font-size: 13px;
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+
+    .visitorSection {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left {
+            flex: 1;
+        }
+
+        .itemTitle {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--gray-100);
+            margin-bottom: 3px;
+        }
+
+        .itemIncome {
+            color: white;
+            font-weight: 600;
+            font-size: 24px;
+            // margin-bottom: 3px;
+        }
+
+        .itemUpdate {
+            display: flex;
+            align-items: center;
+            color: var(--gray-100);
+            font-size: 13px;
+            font-weight: 600;
+        }
+    }
+
+    .chartSection {
+        display: flex;
+        margin-top: 10px;
+    }
+}

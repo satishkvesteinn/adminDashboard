@@ -1,0 +1,92 @@
+.administrator {
+    display: flex;
+    background: rgb(2, 58, 100);
+    // background-image: linear-gradient(to left top,  #00162a, #005c7b, #00a1ba, #139cb3, #6362d9);
+    background: linear-gradient(90deg, hsla(164, 75%, 28%, 1) 0%, hsla(264, 75%, 28%, 1) 100%);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 300px;
+
+
+        .time {
+            display: flex;
+            letter-spacing: 2px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+
+            span {
+
+                &:last-child {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .yearContainer {
+            font-size: 20px;
+            letter-spacing: .2px;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .adminImg {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 5px;
+            }
+
+            span {
+                font-size: 16px;
+                color: #fff;
+                font-weight: 400;
+            }
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            input, button {
+                border: 1px solid rgba(255, 255, 255, 0.445);
+                padding: 0 7px;
+                height: 40px;
+                margin-top: 15px;
+                font-size: 16px;
+                outline: none;
+                border-radius: 4px;
+                background: #139bb3b5;
+                // background-color: red;
+                color: #fff;
+
+                &::placeholder {
+                    color: #fff;
+                }
+
+                &:last-child {
+                    background: #005c7b9f;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+
+            }
+
+        }
+    }
+}

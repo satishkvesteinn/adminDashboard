@@ -1,0 +1,17 @@
+.orders {
+    display: flex;
+    background: url("https://codervent.com/dashtreme-angular/demo/vertical/2.ce8e14d1af61b449.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(.6);
+
+    .container {
+        flex: 6;
+
+        .ordersContainer {
+            padding: 20px;
+        }
+    }
+}

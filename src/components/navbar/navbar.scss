@@ -1,0 +1,114 @@
+.navbar {
+    background: var(--background);
+    height: 60px;
+    display: flex;
+    padding: 0 15px;
+    align-items: center;
+    border-bottom: 1px  solid gray;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    .left {
+        height: 40px;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex: 1;
+
+        .searchBox {
+            background: var(--background-hover);
+            width: 80%;
+            display: flex;
+            padding: 5px 12px;
+            border: 1px solid #36393d;
+            border-radius: 5px;
+            align-items: center;
+            color: white;
+
+            .searchInput {
+                background-color: transparent;
+                height: 100%;
+                font-size: 16px;
+                outline: none;
+                border: none;
+                width: calc(100% - 30px);
+                color: rgba(255, 255, 255, 0.652);
+            }
+
+            .icon {
+                margin-left: 10px;
+                cursor: pointer;
+                font-size: 24px;
+            }
+        }
+    }
+
+    .right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+
+        .items {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border-right: 1px solid gray;
+            margin-right: 10px;
+
+            .item {
+                display: flex;
+                margin-left: 20px;
+                cursor: pointer;
+                position: relative;
+                color: white;
+
+                &:last-child{
+                    margin-right: 20px;
+                }
+
+                span {
+                    position: absolute;
+                    top: -5px;
+                    right: -5px;
+                    background-color: red;
+                    height: 15px;
+                    width: 15px;
+                    display: flex;
+                    align-items: center;
+                    border-radius: 50%;
+                    font-size: 12px;
+                    justify-content: center;
+                }
+            }
+
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 10px;
+            }
+
+            .title{
+                color: #fff;
+                font-size: 17px;
+                font-weight: 500;
+            }
+
+            .desc{
+                font-size: 14px;
+                color: gray;
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+.weigets {
+    padding: 0px;
+
+    .wrapper {
+        display: flex;
+        gap: 20px;
+
+        .items {
+            flex: 1;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 5px;
+            background: var(--background-hover);
+            display: flex;
+
+
+            .item {
+                align-items: center;
+                justify-content: space-between;
+                display: flex;
+
+                .subItem {
+                    display: flex;
+                    flex-direction: column;
+
+                    .itemTitle {
+                        color: var(--inputColor);
+                        margin-bottom: 4px;
+                        font-weight: 600;
+                        font-size: 14px;
+                    }
+
+                    .itemIncome {
+                        font-weight: 600;
+                        color: white;
+                    }
+
+                    .itemUpdate {
+                        display: flex;
+                        align-items: center;
+                        color: var(--inputColor);
+                        font-size: 12px;
+
+                        .icon {
+                            color: var(--inputColor);
+                        }
+                    }
+
+
+                }
+
+                .iconSubItem {
+                    border-radius: 10px;
+                    padding: 10px 12px;
+                    background: rgba(194, 194, 194, 0.242);
+
+                    .subIcon {
+                        color: white;
+                        // font-size: 20px;
+                    }
+                }
+
+            }
+        }
+    }
+}

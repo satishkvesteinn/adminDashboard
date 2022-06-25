@@ -1,11 +1,15 @@
 import { AccountCircleOutlined, BarChartOutlined, ChatBubbleOutlineOutlined, CurrencyRupeeOutlined, EmailOutlined, Logout, GridViewOutlined, HeadsetMicOutlined, Home, LiveHelpOutlined, LockOutlined, MonetizationOnOutlined, ShoppingBagOutlined, ShoppingCartOutlined } from '@mui/icons-material'
 import './sidebar.scss';
 import { Link, useNavigate } from 'react-router-dom'
+import { useContext } from 'react';
+import loginContext from '../../context/login/loginContext';
 
 
 const Sidebar = () => {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const  status= useContext(loginContext);
+    const loggedIn= status.setLoginStatus
 
     return (
         <div className='sidebar'>
@@ -80,8 +84,9 @@ const Sidebar = () => {
                             <span className="itemName">Chat box</span>
                         </li>
                         <li className="items" onClick={() => {
-                            localStorage.clear();
+                            loggedIn(false);
                             navigate("/account")
+                            localStorage.clear();
                         }}>
                             <Logout className='icon' />
                             <span className="itemName">Log out</span>

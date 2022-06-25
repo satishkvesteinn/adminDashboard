@@ -5,14 +5,11 @@ import LoginContext from "./loginContext";
 
 const LoginState = (props) => {
 
-    // const [login, setLogin] = useState("false")
+    const [loginStatus, setLoginStatus] = useState(false)
 
-    const state = {
-        "name" : "satish"
-    }
 
     return (
-        <LoginContext.Provider value={state}>
+        <LoginContext.Provider value={{loginStatus, setLoginStatus}}>
             {props.children}
         </LoginContext.Provider>
     )

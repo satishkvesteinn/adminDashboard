@@ -1,8 +1,9 @@
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './administrator.scss';
 import { useNavigate } from 'react-router-dom'
 import App from '../../App';
+import loginContext from '../../context/login/loginContext';
 
 const Administrator = () => {
 
@@ -36,11 +37,16 @@ const Administrator = () => {
   const [pass, setPass] = useState("")
   const navigate = useNavigate()
 
+  const  status= useContext(loginContext);
+
+  const loggedIn= status.setLoginStatus
+  
   const handleAdministratorSubmit = (e) => {
     e.preventDefault();
-    if (+pass === 1234) {
-      localStorage.setItem("logged", true)
-      navigate('/')
+    if (+pass == 1234) {
+      loggedIn(true)
+      navigate('/');
+      localStorage.setItem("status", true)
     }
     else {
       alert("Invalid PassWord")
@@ -82,7 +88,7 @@ const Administrator = () => {
 
 
         <form className='form' onSubmit={handleAdministratorSubmit}>
-          <input type="password" id='pass' placeholder='Password' onChange={onchange} />
+          <input type="password" id='pass' placeholder='Enter 1234 for demo' onChange={onchange} />
           <button type="submit" >Login</button>
         </form>
       </div>

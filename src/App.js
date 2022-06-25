@@ -10,58 +10,61 @@ import { BrowserRouter, Navigate, Route, Routes, useNavigate } from 'react-route
 import Products from './pages/products/Products';
 import Transations from './pages/transation/Transations';
 import User from './pages/user/User';
+import LoginState from './context/login/loginState'
+import loginContext from './context/login/loginContext';
 
 
 
 function App() {
-  const login = localStorage.getItem("logged")
-  // const navigate = useNavigate()
+  const status = useContext(loginContext);
+  const loggedIn = status.loginStatus
+  console.log(loggedIn);
+
+  const loggedStatus = localStorage.getItem("status")
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/account' element={<Administrator />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/forgetpassword" element={<ForgetPassword />} />
+      <Routes>
+        <Route path='/account' element={<Administrator />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/forgetpassword" element={<ForgetPassword />} />
 
-          <Route path='/' element={login ?
-            <Home /> :
-            <Navigate to='/account' replace></Navigate>
-          }
-          />
+        <Route path='/' element={loggedIn || loggedStatus ?
+          <Home /> :
+          <Navigate to='/account' replace></Navigate>
+        }
+        />
 
-          <Route path='/transations' element={login ?
-            <Transations /> :
-            <Navigate to='/account' replace></Navigate>
-          }
-          />
-
-
-          <Route path='/user' element={login ?
-            <User /> :
-            <Navigate to='/account' replace></Navigate>
-          }
-          />
+        <Route path='/transations' element={loggedIn || loggedStatus ?
+          <Transations /> :
+          <Navigate to='/account' replace></Navigate>
+        }
+        />
 
 
-          <Route path='/products' element={login ?
-            <Products /> :
-            <Navigate to='/account' replace></Navigate>
-          }
-          />
-          <Route path='*' element={login ?
-            <Navigate to='/' replace></Navigate> :
-            <Navigate to='/account' replace></Navigate>
-          }
-          />
-          {/* <Route path="/products" element={<Products />} />
+        <Route path='/user' element={loggedIn || loggedStatus ?
+          <User /> :
+          <Navigate to='/account' replace></Navigate>
+        }
+        />
+
+
+        <Route path='/products' element={loggedIn || loggedStatus ?
+          <Products /> :
+          <Navigate to='/account' replace></Navigate>
+        }
+        />
+        <Route path='*' element={loggedIn || loggedStatus ?
+          <Navigate to='/' replace></Navigate> :
+          <Navigate to='/account' replace></Navigate>
+        }
+        />
+        {/* <Route path="/products" element={<Products />} />
           <Route path="/transations" element={<Transations />} />
           <Route path="/user" element={<User />} /> */}
-          {/* </Route> : <Navigate to='/account' replace></Navigate>} /> */}
-        </Routes>
-      </BrowserRouter>
+        {/* </Route> : <Navigate to='/account' replace></Navigate>} /> */}
+      </Routes>
     </>
   )
 }
